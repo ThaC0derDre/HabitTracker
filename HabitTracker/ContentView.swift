@@ -17,13 +17,16 @@ struct ContentView: View {
                     Text("ADD A HABIT TO TRACK")
                 }else {
                     ForEach($habits.habits) { $habit in
-                        HStack{
-                            Button(habit.id){
-                                habit.count += 1
+                        NavigationLink{
+                            HabitDetailView(habit: habit)
+                        } label: {
+                            HStack{
+                                Text(habit.id)
+                                .foregroundColor(.white)
+                                Spacer()
+                                Text("\(habit.count)")
                             }
-                            .foregroundColor(.white)
-                            Spacer()
-                            Text("\(habit.count)")
+                            
                         }
                     }
                 }
