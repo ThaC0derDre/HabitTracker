@@ -39,5 +39,6 @@ struct AddHabitView: View {
 struct AddHabitView_Previews: PreviewProvider {
     static var previews: some View {
         AddHabitView(habits: Habits.init())
+            .preferredColorScheme(.dark)
     }
 }
